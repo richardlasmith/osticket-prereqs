@@ -130,13 +130,15 @@ We need to now download and install VC_redist.x86.exe. This is required by PHP
 </p>
 <p>
 Let's Download and install MySQL 5.5.62 (mysql-5.5.62-win32) Go to Typical Setup, Launch Configuration Wizard (after install) Standard Configuration, Password1. Then Execute. Keep your PW, Username will be Root. * This is installing a database on the VM to storage user information. 
+</p>
 <br />
   
 <p>
 <img src="https://i.imgur.com/Kj6YNdm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
- Time to do some configurations on IIS. Make sure to run as Admin. Register new PHP Verison Located in the newly created PHP folder in C: Drive. * Restart IIS 
+Time to do some configurations on IIS. Make sure to run as Admin. Register new PHP Verison Located in the newly created PHP folder in C: Drive. * Restart IIS 
+</p>
 <br />
   
 <p>
@@ -144,6 +146,7 @@ Let's Download and install MySQL 5.5.62 (mysql-5.5.62-win32) Go to Typical Setup
 </p>
 <p>
  Download osTicket, unzip and drag the upload folder into "inetpub/ wwwroot 
+</p>
 <br />
   
 <p>
@@ -151,11 +154,79 @@ Let's Download and install MySQL 5.5.62 (mysql-5.5.62-win32) Go to Typical Setup
 </p>
 <p>
  Rename the upload folder "osTicket. Next go to sites, default web site, osTicket. On the right side of IIS you will see browse *:80 (http)
+</p>
 <br />
   
 <p>
-<img src="https://i.imgur.com/EnRENFf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/1bUuGIY.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
- Re
+ Now that osTicket is installed, we need to enable a few missing extensions. Go to PHP Manager, Click enable extensions.  
+</p>
 <br />
+
+<p>
+<img src="https://i.imgur.com/qXjOVhk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p> 
+Now Enable: php_imap.dll , Enable: php_intl.dll, Enable: php_opcache.dll and Refresh the osTicket site in your PHP Manager. 
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/vHDbUEL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p> 
+Rename, ost-samepleconfig.php to ost-config.php
+</p>
+<br />
+
+
+<p>
+<img src="https://i.imgur.com/vTjeVnc.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p> 
+We need to now assign permission to our admin users. Disable inheritance  "Remove all" and add New Permission for "Everyone ALL. This will make sure everyone has access to the file. 
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/LCZXQAx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p> 
+Everyone has permissions to the file, Let's set up osTicket. Helpdesk name: Richard Help Desk, The email is random and is only used to log in. Richard@helper.com. Next we will set up our Admin, using Richard and Richard@gmail.com again this is only used to log in. *Don't forget the PW. Password1
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/27z1NOT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p> 
+Before we can coutine we need to install the database. Which will allow us to connected to the server. Download HeidiSQL and create a New connection to the database and put in your password under the username root. 
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/5a3p3sN.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p> 
+We need to fill in the "MySQL Database, Username, Password and create a new database in HeidiSQL called osTicket, by right clicking on unamed, create new and database. Once completed we should be good to install. 
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/SxOT6LT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p> 
+osTicket is now installed, let's clean it up. By going to wwwroot/inetpub/osTicket and delete the "Setup" folder. Now go back to wwwroot/osTicket/include/ ost-config.php set back to read only
+</p>
+
+<p>
+<img src="https://i.imgur.com/WEgF8OR.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p> 
+Let's test the URL http://localhost/osTicket/scp/login.php. Use the same log in Richard@gmail.com and the PW.  
+</p>
+<br />
+
+This completes the installation of osTicket!
