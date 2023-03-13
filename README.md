@@ -41,7 +41,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 <img src="https://i.imgur.com/nykwEgi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Create a FREE Microsoft Azure account, Once your account is set up search "Resource Group" and Create a resource group with the name "RG-osTicket" 
+Create a FREE Microsoft Azure account. Once your account is created, search "Resource Group" and Create a resource group named "RG-osTicket." 
 </p>
 <br />
 
@@ -49,7 +49,7 @@ Create a FREE Microsoft Azure account, Once your account is set up search "Resou
 <img src="https://i.imgur.com/SuxE71p.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Create a Virtual Machine, by searching VM. Use the Resource Group we created in step 1 "RG-osTicket". Name our new VM (Vitural Machine) VM-osTicket. Keep the region local to you. Mine is (US) East US. Scroll down to Image, and install in Windows 10 Pro, and change the size to " 2 Vcpus 16 GiB Memory for a faster processing speed. Create a VM Log in, Example Username: labuser, password: !!!Password1. * Remember your log in information. Now confirm licensing at the bottom of the page and create you new Virtual Machine. 
+Create a Virtual Machine by searching VM. Use the Resource Group we created in step 1, "RG-osTicket." Name our new VM (Virtual Machine) VM-osTicket. Keep the region local to you. Mine is (US) East US. Scroll down to Image, install in Windows 10 Pro, and change the size to " 2 Vcpus 16 GiB Memory for a faster processing speed. Create a VM Log in, Example Username: lab user, password: !!!Password1. * Remember your login information. Now confirm licensing at the bottom of the page and create your new Virtual Machine. 
 </p>
 <br />
 
@@ -57,7 +57,7 @@ Create a Virtual Machine, by searching VM. Use the Resource Group we created in 
 <img src="https://i.imgur.com/ghy0lXc.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now that your Virtual Machine is created, we'll need to log into it. Search VM on Azure, and copy the public IP address. 
+Now that your Virtual Machine is created, log into it. Search VM on Azure, and copy the public IP address. 
 </p>
 <br />
 
@@ -65,7 +65,7 @@ Now that your Virtual Machine is created, we'll need to log into it. Search VM o
 <img src="https://i.imgur.com/OroSSmX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-For Mac users you can go to the app store and download "Microsoft Remote Desktop" for FREE. Once the application is installed. Add our VM-OSTICKET machine. PC Name: Will be the public IP Address. 
+For Mac users, you can go to the app store and download "Microsoft Remote Desktop" for FREE. Once the application is downloaded, add our VM-OSTICKET machine. PC Name: This will be the public IP Address.
 </p>
 <br />
 
@@ -73,7 +73,7 @@ For Mac users you can go to the app store and download "Microsoft Remote Desktop
 <img src="https://i.imgur.com/R7PUqk9.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Now log in, using the VM-OSTICKET username and password you created. * I hope you remembered this :) 
+Now log in using the VM-OSTICKET username and password you created. * I hope you remember this :)  
 </p>
 <br />
 
@@ -81,7 +81,7 @@ Now log in, using the VM-OSTICKET username and password you created. * I hope yo
 <img src="https://i.imgur.com/G8ZFkj1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Before installing PHP, We need to enable IIS in window with CGI ( Internet Information Services) * It is a web server that allow the VM to Serve up websites. OSTicket is web base). Right Click start, then search Control Panel, then Programs, click "Turn windows features on or off", Scroll down to IIS, Hit the +, and again + on World Wide Web Services. We will need to then click the + on Application Development Features and Mark "CGI" CGI lets us install PHP. OSTicket runs off of PHP.  
+Before installing PHP, We need to enable IIS in windows with CGI ( Internet Information Services) * It is a web server that allows the VM to Serve up websites; OSTicket is web base. Right Click start, then search Control Panel, then Programs, click "Turn windows features on or off," Scroll down to IIS, Hit the +, and again + on World Wide Web Services. Click the + on Application Development Features, and Mark "CGI" CGI lets us install PHP. OSTicket runs off of PHP.  
 </p>
 <br />
 
@@ -129,7 +129,7 @@ We need to now download and install VC_redist.x86.exe. This is required by PHP
 <img src="https://i.imgur.com/nvOXWYy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Let's Download and install MySQL 5.5.62 (mysql-5.5.62-win32) Go to Typical Setup, Launch Configuration Wizard (after install) Standard Configuration, Password1. Then Execute. Keep your PW, Username will be Root. * This is installing a database on the VM to storage user information. 
+Let's Download and install MySQL 5.5.62 (MySQL-5.5.62-win32). Go to Typical Setup, Launch Configuration Wizard (after installation) Standard Configuration, Password1. Then Execute. Keep your PW, and your Username will be Root. * This is installing a database on the VM to store user information. 
 </p>
 <br />
   
@@ -169,7 +169,7 @@ Time to do some configurations on IIS. Make sure to run as Admin. Register new P
 <img src="https://i.imgur.com/qXjOVhk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p> 
-Now Enable: php_imap.dll , Enable: php_intl.dll, Enable: php_opcache.dll and Refresh the osTicket site in your PHP Manager. 
+Enable: php_imap.dll , Enable: php_intl.dll, Enable: php_opcache.dll and Refresh the osTicket site in your PHP Manager. 
 </p>
 <br />
 
@@ -194,7 +194,7 @@ We need to now assign permission to our admin users. Disable inheritance  "Remov
 <img src="https://i.imgur.com/LCZXQAx.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p> 
-Everyone has permissions to the file, Let's set up osTicket. Helpdesk name: Richard Help Desk, The email is random and is only used to log in. Richard@helper.com. Next we will set up our Admin, using Richard and Richard@gmail.com again this is only used to log in. *Don't forget the PW. Password1
+Everyone has permission to access the file. Let's set up osTicket. Helpdesk name: Richard Help Desk, The email is random and is only used for logging in. Richard@helper.com. Next, we will set up our Admin using Richard and Richard@gmail.com. This is only used for logging in. *Remember the PW. Password1
 </p>
 <br />
 
@@ -202,7 +202,7 @@ Everyone has permissions to the file, Let's set up osTicket. Helpdesk name: Rich
 <img src="https://i.imgur.com/27z1NOT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p> 
-Before we can coutine we need to install the database. Which will allow us to connected to the server. Download HeidiSQL and create a New connection to the database and put in your password under the username root. 
+Before continuing, we must install the database, allowing us to connect to the server. Download HeidiSQL, create a New connection to the database, and put your password under the username root. 
 </p>
 <br />
 
@@ -210,7 +210,7 @@ Before we can coutine we need to install the database. Which will allow us to co
 <img src="https://i.imgur.com/5a3p3sN.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p> 
-We need to fill in the "MySQL Database, Username, Password and create a new database in HeidiSQL called osTicket, by right clicking on unamed, create new and database. Once completed we should be good to install. 
+We need to fill in the "MySQL Database, Username, and Password and create a new database in HeidiSQL called osTicket, by right-clicking on unnamed create new and database. Once completed, we should be good to install.  
 </p>
 <br />
 
